@@ -16,3 +16,7 @@ jobs:
           repo_token: "${{ secrets.PAT }}"
           prerelease: false
           title: "Release ${{ github.event.release.tag_name }}"
+      - name: out
+        run: |
+          ${{ github.event.ref }}
+          ${{ github.event.ref.tag }}
