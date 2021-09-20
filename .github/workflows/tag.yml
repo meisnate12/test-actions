@@ -21,4 +21,3 @@ jobs:
         with:
           version-command: |
             cat VERSION
-          tag-template: "{VERSION}"
