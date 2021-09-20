@@ -10,7 +10,9 @@ jobs:
     name: "Tagged Release"
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - id: release
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.PAT }}"
           prerelease: false
+          title: "ArrAPI ${{ steps.release.outputs.automatic_releases_tag }}"
