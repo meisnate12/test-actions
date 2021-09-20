@@ -22,6 +22,6 @@ jobs:
       - uses: salsify/action-detect-and-tag-new-version@v2
         with:
           version-command: |
+            cat VERSION
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
-            cat VERSION
