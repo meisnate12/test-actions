@@ -10,7 +10,7 @@ on:
   pull_request:
     branches: [ master ]
 env:
-   GITHUB_TOKEN: ${{ secrets. PATNAME }}
+   GITHUB_TOKEN: ${{ secrets.PAT }}
 jobs:
   tag-new-versions:
     runs-on: ubuntu-latest
