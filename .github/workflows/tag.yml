@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          ssh-key: "${{ secrets.COMMIT_KEY }}"
           fetch-depth: 2
       - uses: salsify/action-detect-and-tag-new-version@v2
         with:
