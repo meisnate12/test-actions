@@ -1,4 +1,4 @@
-name: "release"
+name: release
 
 on:
   create:
@@ -7,12 +7,12 @@ on:
 
 jobs:
   tagged-release:
-    name: "Release"
-    runs-on: "ubuntu-latest"
+    name: Release
+    runs-on: ubuntu-latest
     steps:
       - id: release
-        uses: "marvinpinto/action-automatic-releases@latest"
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          repo_token: "${{ secrets.PAT }}"
+          repo_token: ${{ secrets.PAT }}
           prerelease: false
-          title: "Release ${{ github.event.ref }}"
+          title: Release ${{ github.event.ref }}
