@@ -22,7 +22,3 @@ jobs:
           version-command: |
             cat VERSION
           tag-template: "{VERSION}"
-      - uses: marvinpinto/action-automatic-releases@latest
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
