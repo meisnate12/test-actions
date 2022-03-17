@@ -13,7 +13,7 @@ jobs:
     steps:
 
       - name: Discord Success Notification
-        uses: meisnate12/discord-notifications@11d4680346a8e03594f75f7c2ae0ff5f99f0f3c3
+        uses: meisnate12/discord-notifications@0ca13630ec4825ec69244b04751323fc8e781ef1
         if: success()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
