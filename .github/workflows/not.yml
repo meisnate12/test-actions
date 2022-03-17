@@ -13,11 +13,12 @@ jobs:
     steps:
 
       - name: Discord Success Notification
-        uses: meisnate12/discord-notifications@0ca13630ec4825ec69244b04751323fc8e781ef1
+        uses: meisnate12/actions-status-discord@0debc7bcc07db77af884e3f49c6ec7a39a7be7d3
         if: success()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           nodetail: true
           title: "Docker develop build: **Success**"
           username: Docker
+          notime: true
           avatar_url: https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/develop/.github/docker.png
