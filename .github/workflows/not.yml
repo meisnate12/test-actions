@@ -1,24 +1,18 @@
-name: Discord Notification Test
+name: Release
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  release:
+    types: [ published ]
 
 jobs:
 
-  docker-develop:
+  release:
+
     runs-on: ubuntu-latest
     steps:
 
-      - name: Discord Success Notification
-        uses: meisnate12/actions-status-discord@0debc7bcc07db77af884e3f49c6ec7a39a7be7d3
-        if: success()
+      - name: Send Discord Release Notification
+        uses: meisnate12/discord-release-action@3996630fad0dba74035d1a49237a79dbd3cc28d9
         with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          nodetail: true
-          title: "Docker develop build: **Success**"
-          username: Docker
-          notime: true
-          avatar_url: https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/develop/.github/docker.png
+          webhook_id: ${{ secrets.RELEASE_WEBHOOK_ID }}
+          webhook_token: ${{ secrets.RELEASE_WEBHOOK_TOKEN }}
