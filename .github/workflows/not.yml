@@ -1,0 +1,23 @@
+name: Docker Develop Release
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+
+  docker-develop:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Discord Success Notification
+        uses: meisnate12/discord-notifications@ce53473b19eb488d5ba96e577cef9b8a94ad057f
+        if: success()
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          nodetail: true
+          title: "Docker develop build: **Success**"
+          username: Docker
+          avatar_url: https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/develop/.github/docker.png
