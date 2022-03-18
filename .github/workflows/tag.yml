@@ -20,8 +20,6 @@ jobs:
         with:
           webhook_id: ${{ secrets.RELEASE_WEBHOOK_ID }}
           webhook_token: ${{ secrets.RELEASE_WEBHOOK_TOKEN }}
-          description: TESTING
-          title: WHYYYYY
 
 
       - name: Send Discord Release Notification
