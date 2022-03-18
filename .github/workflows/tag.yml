@@ -16,7 +16,7 @@ jobs:
     steps:
 
       - name: Send Discord Release Notification
-        uses: meisnate12/discord-release-action@master
+        uses: meisnate12/discord-notifications@master
         with:
           webhook_id: ${{ secrets.RELEASE_WEBHOOK_ID }}
           webhook_token: ${{ secrets.RELEASE_WEBHOOK_TOKEN }}
