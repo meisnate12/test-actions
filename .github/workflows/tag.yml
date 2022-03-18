@@ -18,6 +18,13 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           fetch-depth: 2
+      - name: Send Discord Release Notification
+        uses: meisnate12/discord-release-action@master
+        with:
+          webhook_id: ${{ secrets.RELEASE_WEBHOOK_ID }}
+          webhook_token: ${{ secrets.RELEASE_WEBHOOK_TOKEN }}
+          description: TESTING
+          title: WHYYYYY
       - uses: salsify/action-detect-and-tag-new-version@v1.0.3
         with:
           version-command: |
