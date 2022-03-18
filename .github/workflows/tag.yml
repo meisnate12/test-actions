@@ -16,7 +16,16 @@ jobs:
     steps:
 
       - name: Send Discord Release Notification
-        uses: meisnate12/discord-release-action@11978c5797831c30c8e87db25f6874848e2f38ed
+        uses: meisnate12/discord-release-action@d45d1d320773f2db5dde5d1e7c4024c19bbc4fbd
+        with:
+          webhook_id: ${{ secrets.RELEASE_WEBHOOK_ID }}
+          webhook_token: ${{ secrets.RELEASE_WEBHOOK_TOKEN }}
+          description: TESTING
+          title: WHYYYYY
+
+
+      - name: Send Discord Release Notification
+        uses: meisnate12/discord-release-action@master
         with:
           webhook_id: ${{ secrets.RELEASE_WEBHOOK_ID }}
           webhook_token: ${{ secrets.RELEASE_WEBHOOK_TOKEN }}
