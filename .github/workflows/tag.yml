@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Tag
+name: Discord
 
 # Controls when the workflow will run
 on:
@@ -14,18 +14,12 @@ jobs:
   tag-new-versions:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PAT }}
-          fetch-depth: 2
+
       - name: Send Discord Release Notification
-        uses: meisnate12/discord-release-action@master
+        uses: meisnate12/discord-release-action@11978c5797831c30c8e87db25f6874848e2f38ed
         with:
           webhook_id: ${{ secrets.RELEASE_WEBHOOK_ID }}
           webhook_token: ${{ secrets.RELEASE_WEBHOOK_TOKEN }}
           description: TESTING
           title: WHYYYYY
-      - uses: salsify/action-detect-and-tag-new-version@v1.0.3
-        with:
-          version-command: |
-            cat VERSION
+
