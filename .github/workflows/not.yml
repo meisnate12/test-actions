@@ -1,4 +1,4 @@
-name: Commit Notification
+name: Commit Notification2
 
 on:
   push:
