@@ -1,4 +1,4 @@
-name: Commit Ngfication
+name: Commit Notification
 
 on:
   push:
