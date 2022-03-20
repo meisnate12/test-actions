@@ -18,4 +18,4 @@ jobs:
           title: Plex Meta Manager Develop Commit
           commits: "true"
           username: PMM Develop
-          avatar_url: https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/.github/pmm.png
+          avatar_url: https://raw.githubusercontent.com/meisnate12/test-actions/master/bot.png
