@@ -21,10 +21,9 @@ jobs:
           version-command: |
             cat VERSION
 
-      - name: Check Out Repo
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      - name: Get the version
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_OUTPUT
 
       - name: Get Changelog
         id: notes
