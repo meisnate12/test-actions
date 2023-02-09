@@ -21,6 +21,9 @@ jobs:
           version-command: |
             cat VERSION
 
+      - name: Fetch
+        run: git fetch
+
       - name: Get Changelog
         id: notes
         run: |
