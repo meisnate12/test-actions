@@ -16,6 +16,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: salsify/action-detect-and-tag-new-version@v1.0.3
+        with:
+          version-command: |
+            cat VERSION
+
       - name: Get Changelog
         id: notes
         run: |
