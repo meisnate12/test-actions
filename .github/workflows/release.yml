@@ -22,20 +22,10 @@ jobs:
           version-command: |
             cat VERSION
 
-      - name: Get Changelog
-        id: notes
-        run: |
-          echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
-          echo "Tag name from github.ref_name: ${{  github.ref_name }}"
-          echo cat CHANGELOG
-          NOTE=$(cat CHANGELOG)
-          echo "$NOTE"
-          echo 'NOTES=$NOTE' >> $GITHUB_OUTPUT
-
       - name: Create release
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          body: ${{ steps.notes.outputs.NOTES }}
+          body_path: CHANGELOG
           token: ${{ secrets.PAT }}
           tag_name: ${{ steps.tag.outputs.tag }}
