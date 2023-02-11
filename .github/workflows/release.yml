@@ -36,6 +36,6 @@ jobs:
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          body: Testing ${{ steps.tag.outputs.tag }} ${GITHUB_REF/refs\/tags\//}
+          body: ${{ steps.notes.outputs.NOTES }}
           token: ${{ secrets.PAT }}
           tag_name: ${{ steps.tag.outputs.tag }}
