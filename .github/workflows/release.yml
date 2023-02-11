@@ -25,7 +25,11 @@ jobs:
       - name: Get Changelog
         id: notes
         run: |
+          echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
+          echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+          echo cat CHANGELOG
           NOTE=$(cat CHANGELOG)
+          echo "$NOTE"
           echo 'NOTES=$NOTE' >> $GITHUB_OUTPUT
 
       - name: Create release
