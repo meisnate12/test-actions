@@ -17,13 +17,10 @@ jobs:
           fetch-depth: 2
 
       - uses: salsify/action-detect-and-tag-new-version@v1.0.3
+        id: tag
         with:
           version-command: |
             cat VERSION
-
-      - name: Get the version
-        id: get_version
-        run: echo "VERSION=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_OUTPUT
 
       - name: Get Changelog
         id: notes
@@ -35,6 +32,6 @@ jobs:
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          body: Testing ${{ steps.get_version.outputs.VERSION }} ${GITHUB_REF/refs\/tags\//}
+          body: Testing ${{ steps.tag.outputs.tag }} ${GITHUB_REF/refs\/tags\//}
           token: ${{ secrets.PAT }}
           tag_name: ${{ steps.get_version.outputs.VERSION }}
