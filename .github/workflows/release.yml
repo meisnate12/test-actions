@@ -34,4 +34,4 @@ jobs:
         with:
           body: Testing ${{ steps.tag.outputs.tag }} ${GITHUB_REF/refs\/tags\//}
           token: ${{ secrets.PAT }}
-          tag_name: ${{ steps.get_version.outputs.VERSION }}
+          tag_name: ${{ steps.tag.outputs.tag }}
