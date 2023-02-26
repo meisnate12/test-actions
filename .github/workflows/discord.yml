@@ -11,12 +11,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Send Discord Release Notification
+      - name: Send Old Style Discord Release Notification
         uses: meisnate12/discord-notifications@develop
         with:
-          webhook_id: ${{ secrets.RELEASE_WEBHOOK_ID }}
-          webhook_token: ${{ secrets.RELEASE_WEBHOOK_TOKEN }}
-          title: PMM Overlay Reset Release VERSION
-          message: "A new version of PMM Overlay Reset has been released and is available to all users"
+          webhook_id: 1039940609252798477
+          webhook_token: SMqomrG-2n3L_dsWyWbNf7IRV65FiXkJvHSrX2U7NT-DZpR8QKzMe-NP8HhXFR6GLwG8
+          title: Old Style
+          message: "Old Style"
+          username: Metabot
+          avatar_url: https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/.github/pmm.png
+
+      - name: Send New Style Discord Release Notification
+        uses: meisnate12/discord-notifications@develop
+        with:
+          webhook_id_token: 1039940609252798477/SMqomrG-2n3L_dsWyWbNf7IRV65FiXkJvHSrX2U7NT-DZpR8QKzMe-NP8HhXFR6GLwG8
+          title: New Style
+          message: "New Style "
           username: Metabot
           avatar_url: https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/.github/pmm.png
