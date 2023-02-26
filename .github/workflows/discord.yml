@@ -14,7 +14,8 @@ jobs:
       - name: Send Discord Release Notification
         uses: meisnate12/discord-notifications@develop
         with:
-          webhook_id_token: ${{ secrets.RELEASE_WEBHOOK_ID }}/${{ secrets.RELEASE_WEBHOOK_TOKEN }}
+          webhook_id: ${{ secrets.RELEASE_WEBHOOK_ID }}
+          webhook_token: ${{ secrets.RELEASE_WEBHOOK_TOKEN }}
           title: PMM Overlay Reset Release VERSION
           message: "A new version of PMM Overlay Reset has been released and is available to all users"
           username: Metabot
