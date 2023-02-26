@@ -14,7 +14,7 @@ jobs:
       - name: Send Old Style Discord Release Notification
         uses: meisnate12/discord-notifications@develop
         with:
-          webhook_id: 1039940609252798477
+          webhook_id: "1039940609252798477"
           webhook_token: SMqomrG-2n3L_dsWyWbNf7IRV65FiXkJvHSrX2U7NT-DZpR8QKzMe-NP8HhXFR6GLwG8
           title: Old Style
           message: "Old Style"
